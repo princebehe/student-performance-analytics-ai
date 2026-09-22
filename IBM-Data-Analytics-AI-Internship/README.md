@@ -3,7 +3,7 @@
 **IBM SkillsBuild Data Analytics with AI Internship 2026**  
 *In association with BharatCares & AICTE*  
 **Developer / Contributor:** AdityaBP  
-**Development Environment:** Antigravity IDE (Windows 64-bit)  
+**Development Environment:** Python 3.10 / JupyterLab (Windows 64-bit)  
 **Date:** September 2026  
 
 ---
@@ -93,7 +93,7 @@ This system provides institutional decision-makers with proactive, evidence-base
 
 ## 6. Technologies Used
 
-- **Environment:** Antigravity IDE (Windows 64-bit)
+- **Environment:** Python 3.10 / JupyterLab (Windows 64-bit)
 - **Programming Language:** Python 3.10.11
 - **Data Analytics:** `pandas` (v2.3.3), `numpy` (v2.2.6)
 - **Machine Learning:** `scikit-learn` (v1.7.2)
@@ -269,8 +269,8 @@ jupyter notebook AdityaBP_StudentPerformanceAnalytics.ipynb
 ```
 Select **Kernel $\rightarrow$ Restart & Run All** to re-execute all 25 analytical sections.
 
-### Running in VS Code / Antigravity IDE:
-1. Open the project folder in Antigravity IDE or VS Code.
+### Running in VS Code / JupyterLab:
+1. Open the project folder in VS Code or JupyterLab.
 2. Open `AdityaBP_StudentPerformanceAnalytics.ipynb`.
 3. In the top right kernel selector, select `.venv (Python 3.10)`.
 4. Click **Run All** to execute all cells.

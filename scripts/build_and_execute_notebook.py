@@ -33,7 +33,7 @@ def create_notebook():
 **Internship:** IBM SkillsBuild Data Analytics with AI Internship 2026  
 **In Association With:** BharatCares & AICTE  
 **Lead Developer / Contributor:** AdityaBP  
-**Environment:** Antigravity IDE (Windows)  
+**Environment:** Python 3.10 / JupyterLab (Windows)  
 **Date:** September 2026  
 
 ---
@@ -127,7 +127,7 @@ Higher education institutions face substantial challenges in student retention, 
     cells.append(nbf.v4.new_markdown_cell(
 """## 6. Technologies Used
 
-- **Runtime & Environment:** Python 3.10+, Antigravity IDE (Windows 64-bit).
+- **Runtime & Environment:** Python 3.10+, JupyterLab / VS Code (Windows 64-bit).
 - **Data Manipulation & Analysis:** `pandas` (DataFrames, aggregations), `numpy` (vectorized math, stochastic sampling).
 - **Statistical Machine Learning:** `scikit-learn` (`Pipeline`, `ColumnTransformer`, `StandardScaler`, `OneHotEncoder`, `SimpleImputer`, `RandomForestClassifier`, `LogisticRegression`, `GradientBoostingClassifier`).
 - **Data Visualization:** `matplotlib.pyplot`, `seaborn` (customized aesthetic, color palettes, high-resolution rendering).

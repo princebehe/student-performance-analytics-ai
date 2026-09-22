@@ -174,7 +174,7 @@ def generate_docx_report(metrics_path="report/metrics_summary.json", output_docx
         ("Candidate / Author:", "AdityaBP"),
         ("Project Program:", "IBM SkillsBuild Data Analytics with AI Internship 2026"),
         ("Institutional Association:", "BharatCares in association with AICTE"),
-        ("Development Environment:", "Antigravity IDE (Windows 64-bit Architecture)"),
+        ("Development Environment:", "Python 3.10 / JupyterLab (Windows 64-bit Architecture)"),
         ("Submission Date:", "September 2026"),
         ("Document Classification:", "Final Internship Capstone Project Report")
     ]
@@ -312,7 +312,7 @@ def generate_docx_report(metrics_path="report/metrics_summary.json", output_docx
     # 8. TECHNOLOGIES USED
     # -------------------------------------------------------------
     add_heading_with_spacing(doc, "8. Technologies Used", level=1)
-    add_styled_paragraph(doc, "• Programming Language & Runtime: Python 3.10.11 running in Antigravity IDE (Windows).")
+    add_styled_paragraph(doc, "• Programming Language & Runtime: Python 3.10.11 / JupyterLab (Windows 64-bit).")
     add_styled_paragraph(doc, "• Data Processing & Numerical Computing: Pandas 2.3.3 and NumPy 2.2.6.")
     add_styled_paragraph(doc, "• Machine Learning & Preprocessing: Scikit-Learn 1.7.2 (Pipeline, ColumnTransformer, Imputers, Ensembles).")
     add_styled_paragraph(doc, "• Visual Analytics: Matplotlib 3.10.9 and Seaborn 0.13.2.")
