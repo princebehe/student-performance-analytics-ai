@@ -1,6 +1,14 @@
 """
 Central pipeline orchestrator for Student Performance Analytics System.
 """
+import sys
+from pathlib import Path
+
+# Ensure repository root is on sys.path
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
 import os
 import json
 import numpy as np

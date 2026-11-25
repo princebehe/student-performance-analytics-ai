@@ -1,7 +1,14 @@
 """
 Streamlit interactive inference application for Student Academic Risk Prediction.
 """
+import sys
 from pathlib import Path
+
+# Ensure repository root is on sys.path for cloud deployment environments
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
 import json
 import joblib
 import numpy as np
@@ -14,6 +21,7 @@ from src.config import (
     NUMERICAL_FEATURES,
     CATEGORICAL_FEATURES,
     RISK_TIERS,
+    RAW_DATA_PATH,
 )
 from src.features.preprocessor import split_features_target
 
@@ -27,11 +35,25 @@ MODEL_PATH = MODELS_DIR / "champion_pipeline.joblib"
 
 @st.cache_resource
 def load_trained_model():
-    """Load serialized champion model pipeline."""
-    if not MODEL_PATH.exists():
-        st.error(f"Trained model not found at {MODEL_PATH}. Run `python -m src.pipeline` first.")
-        st.stop()
-    return joblib.load(MODEL_PATH)
+    """Load serialized champion model pipeline with self-healing fallback for cloud environments."""
+    if MODEL_PATH.exists():
+        try:
+            return joblib.load(MODEL_PATH)
+        except Exception:
+            # Fall through to dynamic retraining if cross-version unpickling fails
+            pass
+
+    # Dynamic training fallback for clean cloud execution
+    from src.data.loader import load_dataset
+    from src.data.cleaner import DataCleaner
+    from src.models.train import ModelTrainer
+
+    df_raw = load_dataset(RAW_DATA_PATH)
+    cleaner = DataCleaner()
+    df_clean, _ = cleaner.clean(df_raw)
+    trainer = ModelTrainer()
+    _, champion_pipeline, _ = trainer.train_and_evaluate(df_clean)
+    return champion_pipeline
 
 @st.cache_data
 def load_metrics():
