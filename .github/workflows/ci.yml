@@ -23,6 +23,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Execute end-to-end pipeline
+        run: |
+          python -m src.pipeline
+
       - name: Run automated test suite
         run: |
           pytest tests/ -v
