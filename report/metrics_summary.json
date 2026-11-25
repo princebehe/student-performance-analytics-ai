@@ -1,135 +1,249 @@
 {
-  "raw_rows": 2050,
-  "raw_cols": 16,
-  "raw_duplicates": 27,
-  "raw_missing": 100,
-  "missing_by_col": {
-    "study_hours_per_day": 24,
-    "previous_score": 18,
-    "extracurricular_activity": 16,
-    "sleep_hours": 20,
-    "parental_education": 22
-  },
-  "clean_rows": 2023,
-  "clean_cols": 16,
-  "clean_duplicates": 0,
-  "clean_missing": 0,
-  "kpis": {
-    "avg_final_score": 61.404349975284234,
-    "avg_attendance": 67.53321799307959,
-    "avg_study_hours": 3.617993079584775,
-    "high_performing_pct": 7.661888284725656,
-    "high_risk_pct": 17.647058823529413,
-    "avg_assignment_score": 53.588433020266926,
-    "avg_midterm_score": 54.77681660899654,
-    "avg_previous_score": 67.60528917449332
-  },
-  "risk_counts": {
-    "Moderate Risk": 1185,
-    "Low Risk": 481,
-    "High Risk": 357
-  },
-  "risk_pcts": {
-    "Moderate Risk": 58.57637172516065,
-    "Low Risk": 23.776569451309935,
-    "High Risk": 17.647058823529413
-  },
-  "metrics": {
-    "Logistic Regression": {
-      "Accuracy": 0.8222,
-      "Precision": 0.8225,
-      "Recall": 0.8222,
-      "F1-Score": 0.8198,
-      "ROC-AUC": 0.9313
+  "audit": {
+    "initial": {
+      "total_records": 2050,
+      "duplicate_records": 27,
+      "total_missing_values": 100,
+      "missing_attributes": {
+        "study_hours_per_day": 24,
+        "previous_score": 18,
+        "extracurricular_activity": 16,
+        "sleep_hours": 20,
+        "parental_education": 22
+      }
     },
-    "Random Forest": {
-      "Accuracy": 0.8321,
-      "Precision": 0.8392,
-      "Recall": 0.8321,
-      "F1-Score": 0.8275,
-      "ROC-AUC": 0.9251
-    },
-    "Gradient Boosting": {
-      "Accuracy": 0.7877,
-      "Precision": 0.787,
-      "Recall": 0.7877,
-      "F1-Score": 0.7845,
-      "ROC-AUC": 0.9074
+    "cleaned": {
+      "total_records": 2023,
+      "duplicate_records": 0,
+      "total_missing_values": 0,
+      "missing_attributes": {}
     }
   },
-  "best_model": "Random Forest",
-  "confusion_matrix": [
-    [
-      47,
-      25,
-      0
-    ],
-    [
-      7,
-      222,
-      8
-    ],
-    [
-      0,
-      28,
-      68
-    ]
-  ],
-  "confusion_matrix_classes": [
-    "High Risk",
-    "Moderate Risk",
-    "Low Risk"
-  ],
+  "champion_model": "Logistic Regression",
+  "champion_f1": 0.8197608965283364,
+  "benchmark_results": {
+    "Logistic Regression": {
+      "accuracy": 0.8222222222222222,
+      "weighted_precision": 0.8224569741252481,
+      "weighted_recall": 0.8222222222222222,
+      "weighted_f1": 0.8197608965283364,
+      "roc_auc_ovr": 0.93130703004849,
+      "confusion_matrix": [
+        [
+          73,
+          23,
+          0
+        ],
+        [
+          12,
+          212,
+          13
+        ],
+        [
+          0,
+          24,
+          48
+        ]
+      ],
+      "classification_report": {
+        "Low Risk": {
+          "precision": 0.8588235294117647,
+          "recall": 0.7604166666666666,
+          "f1-score": 0.8066298342541437,
+          "support": 96.0
+        },
+        "Moderate Risk": {
+          "precision": 0.8185328185328186,
+          "recall": 0.8945147679324894,
+          "f1-score": 0.8548387096774194,
+          "support": 237.0
+        },
+        "High Risk": {
+          "precision": 0.7868852459016393,
+          "recall": 0.6666666666666666,
+          "f1-score": 0.7218045112781954,
+          "support": 72.0
+        },
+        "accuracy": 0.8222222222222222,
+        "macro avg": {
+          "precision": 0.8214138646154074,
+          "recall": 0.7738660337552742,
+          "f1-score": 0.7944243517365862,
+          "support": 405.0
+        },
+        "weighted avg": {
+          "precision": 0.8224569741252479,
+          "recall": 0.8222222222222222,
+          "f1-score": 0.8197608965283364,
+          "support": 405.0
+        }
+      }
+    },
+    "Random Forest": {
+      "accuracy": 0.8,
+      "weighted_precision": 0.8105513001975172,
+      "weighted_recall": 0.8,
+      "weighted_f1": 0.8023069328211042,
+      "roc_auc_ovr": 0.9190816914926947,
+      "confusion_matrix": [
+        [
+          81,
+          15,
+          0
+        ],
+        [
+          20,
+          185,
+          32
+        ],
+        [
+          0,
+          14,
+          58
+        ]
+      ],
+      "classification_report": {
+        "Low Risk": {
+          "precision": 0.801980198019802,
+          "recall": 0.84375,
+          "f1-score": 0.8223350253807107,
+          "support": 96.0
+        },
+        "Moderate Risk": {
+          "precision": 0.8644859813084113,
+          "recall": 0.7805907172995781,
+          "f1-score": 0.8203991130820399,
+          "support": 237.0
+        },
+        "High Risk": {
+          "precision": 0.6444444444444445,
+          "recall": 0.8055555555555556,
+          "f1-score": 0.7160493827160493,
+          "support": 72.0
+        },
+        "accuracy": 0.8,
+        "macro avg": {
+          "precision": 0.7703035412575526,
+          "recall": 0.8099654242850445,
+          "f1-score": 0.7862611737262667,
+          "support": 405.0
+        },
+        "weighted avg": {
+          "precision": 0.8105513001975172,
+          "recall": 0.8,
+          "f1-score": 0.8023069328211042,
+          "support": 405.0
+        }
+      }
+    },
+    "Gradient Boosting": {
+      "accuracy": 0.8,
+      "weighted_precision": 0.799935512659959,
+      "weighted_recall": 0.8,
+      "weighted_f1": 0.7972515502264664,
+      "roc_auc_ovr": 0.9029491979779647,
+      "confusion_matrix": [
+        [
+          72,
+          24,
+          0
+        ],
+        [
+          11,
+          208,
+          18
+        ],
+        [
+          0,
+          28,
+          44
+        ]
+      ],
+      "classification_report": {
+        "Low Risk": {
+          "precision": 0.8674698795180723,
+          "recall": 0.75,
+          "f1-score": 0.8044692737430168,
+          "support": 96.0
+        },
+        "Moderate Risk": {
+          "precision": 0.8,
+          "recall": 0.8776371308016878,
+          "f1-score": 0.8370221327967807,
+          "support": 237.0
+        },
+        "High Risk": {
+          "precision": 0.7096774193548387,
+          "recall": 0.6111111111111112,
+          "f1-score": 0.6567164179104478,
+          "support": 72.0
+        },
+        "accuracy": 0.8,
+        "macro avg": {
+          "precision": 0.7923824329576371,
+          "recall": 0.7462494139709329,
+          "f1-score": 0.7660692748167485,
+          "support": 405.0
+        },
+        "weighted avg": {
+          "precision": 0.799935512659959,
+          "recall": 0.8,
+          "f1-score": 0.7972515502264664,
+          "support": 405.0
+        }
+      }
+    }
+  },
   "top_features": [
     {
       "Feature": "midterm_score",
-      "Importance": 0.1375118787872224,
-      "Std": 0.012326240475834636
+      "Importance": 0.12963819688590889,
+      "Std": 0.016419399919554337
     },
     {
       "Feature": "assignment_score",
-      "Importance": 0.11332352020479042,
-      "Std": 0.012879228196838637
-    },
-    {
-      "Feature": "attendance_percentage",
-      "Importance": 0.05465022054919161,
-      "Std": 0.011836784011928133
+      "Importance": 0.05051100731724746,
+      "Std": 0.011533778615966795
     },
     {
       "Feature": "study_hours_per_day",
-      "Importance": 0.05114331473570438,
-      "Std": 0.00960882983941975
+      "Importance": 0.05026901018546974,
+      "Std": 0.012305902212886981
     },
     {
-      "Feature": "previous_score",
-      "Importance": 0.025697194519803214,
-      "Std": 0.006180958077635619
+      "Feature": "attendance_percentage",
+      "Importance": 0.04558303847063524,
+      "Std": 0.01271845573803822
     },
     {
-      "Feature": "class_participation",
-      "Importance": 0.01603258133502522,
-      "Std": 0.004951157431849668
-    },
-    {
-      "Feature": "age",
-      "Importance": 0.010281414907341312,
-      "Std": 0.0022944229872286412
-    },
-    {
-      "Feature": "extracurricular_activity",
-      "Importance": 0.0030976141437992987,
-      "Std": 0.003033477985954747
+      "Feature": "gender",
+      "Importance": 0.00430457109560245,
+      "Std": 0.002626014015698402
     },
     {
       "Feature": "parental_education",
-      "Importance": 0.00247499025547252,
-      "Std": 0.0023403059034673834
+      "Importance": 0.004180173169318957,
+      "Std": 0.004582647525320953
+    },
+    {
+      "Feature": "extracurricular_activity",
+      "Importance": 0.0038924447718348466,
+      "Std": 0.002573063503217857
+    },
+    {
+      "Feature": "previous_score",
+      "Importance": -0.00043316407951637936,
+      "Std": 0.007574794538809231
+    },
+    {
+      "Feature": "internet_access",
+      "Importance": -0.0009830759821266356,
+      "Std": 0.004520794866632853
     },
     {
       "Feature": "family_income_category",
-      "Importance": 0.002091467859948537,
-      "Std": 0.0031507523217216395
+      "Importance": -0.0018436307548301833,
+      "Std": 0.004344328949856618
     }
   ]
 }
