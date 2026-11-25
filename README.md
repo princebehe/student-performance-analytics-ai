@@ -6,7 +6,7 @@
 **Development Environment:** Python 3.10 / 3.14 (Windows 64-bit / Linux Container)  
 **Date:** November 2026  
 
-[![CI Quality & Test Suite](https://github.com/Aadiii00/student-performance-analytics-ai/actions/workflows/ci.yml/badge.svg)](https://github.com/Aadiii00/student-performance-analytics-ai/actions/workflows/ci.yml)
+[![CI Quality & Test Suite](https://github.com/princebehe/student-performance-analytics-ai/actions/workflows/ci.yml/badge.svg)](https://github.com/princebehe/student-performance-analytics-ai/actions/workflows/ci.yml)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.14-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Streamlit](https://img.shields.io/badge/UI-Streamlit-FF4B4B.svg)](https://streamlit.io/)
@@ -286,7 +286,7 @@ student-performance-analytics-ai/
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/Aadiii00/student-performance-analytics-ai.git
+git clone https://github.com/princebehe/student-performance-analytics-ai.git
 cd student-performance-analytics-ai
 
 # 2. Create Python virtual environment (.venv)
